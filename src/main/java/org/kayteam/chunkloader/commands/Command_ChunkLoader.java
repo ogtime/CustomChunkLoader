@@ -1,5 +1,6 @@
 package org.kayteam.chunkloader.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -38,9 +39,22 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
                         new Command_Off().disableChunkLoad(player);
                     }
 
-                } else if (args[0].equalsIgnoreCase("create")) {
-                    if (PermissionChecker.check(player, "chunkloader.create")) {
-                        new Command_CreateChunkLoader().createChunkLoader(player);
+                } else if (args[0].equalsIgnoreCase("give")) {
+                    if (PermissionChecker.check(player, "chunkloader.give")) {
+                        try {
+                            Player receiver = player;
+                            if (args.length > 1) {
+                                for (Player p : Bukkit.getOnlinePlayers()) {
+                                    if (p.getDisplayName().equals(args[1])) {
+                                        receiver = p;
+                                    }
+                                }
+                            }
+
+                            new Command_CreateChunkLoader().createChunkLoader(player, receiver);
+                        } catch (Exception ignored) {
+                        }
+
                     }
                 } else if (args[0].equalsIgnoreCase("tp")) {
                     if (PermissionChecker.check(player, "chunkloader.tp")) {

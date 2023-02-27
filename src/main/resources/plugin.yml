@@ -1,9 +1,8 @@
 name: ChunkLoader
 main: org.kayteam.chunkloader.ChunkLoader
 version: ${project.version}
-author: KayTeam
+author: OGTime
 api-version: 1.13
-website: https://kayteam.org
 softdepend: [ Multiverse-Core, WorldEdit ]
 commands:
   removechunkregion:
@@ -40,4 +39,4 @@ permissions:
       - chunkloader.on
       - chunkloader.off
       - chunkloader.reload
-      - chunkloader.create
+      - chunkloader.give

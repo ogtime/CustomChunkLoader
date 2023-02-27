@@ -1,5 +1,6 @@
 package org.kayteam.chunkloader.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -10,7 +11,7 @@ import java.util.Arrays;
 import static org.kayteam.chunkloader.Extensions.ItemStackExtension.createGuiItem;
 
 public class Command_CreateChunkLoader {
-    public void createChunkLoader(Player player) {
+    public void createChunkLoader(Player player, Player receiver) {
         String displayName = ChunkLoader.getInstance().getConfig().getString("block-name");
         if (displayName == null) {
             return;
@@ -31,8 +32,8 @@ public class Command_CreateChunkLoader {
                 )
         );
 
-        player.getInventory().addItem(cl);
+        Bukkit.getLogger().info(receiver.toString());
+
+        receiver.getInventory().addItem(cl);
     }
-
-
 }
