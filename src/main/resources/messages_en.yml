@@ -1,32 +1,32 @@
 command:
-  worldedit-disabled: "&2Chunk&aLoader &7>> &f&cThis command is disabled because you don't have WorldEdit installed on your server."
-  only-player: '&2Chunk&aLoader &7>> &f&cThis command can only be executed by one player.'
-  no-permissions: "&2Chunk&aLoader &7>> &f&cSorry, you don't have permissions to execute this command."
+  worldedit-disabled: "&cThis command is disabled because you don't have WorldEdit installed on your server."
+  only-player: '&cThis command can only be executed by one player.'
+  no-permissions: "&cSorry, you don't have permissions to execute this command."
 addchunk:
-  correct: '&2Chunk&aLoader &7>> &f&aChunk &7%chunk_coords% &ahas been registered successfully.'
-  exist: '&2Chunk&aLoader &7>> &f&cChunk &7%chunk_coords% &cis already registered.'
+  correct: '&aChunk &7%chunk_coords% &ahas been registered successfully.'
+  exist: '&cChunk &7%chunk_coords% &cis already registered.'
 logs:
-  load: '&2Chunk&aLoader &7>> &f&aChunk &7%chunk% &awas loaded correctly.'
-  unload: '&2Chunk&aLoader &7>> &f&cChunk &7%chunk% &cwas unloaded correctly.'
-  messages: '&2Chunk&aLoader &7>> &f&7%lang% &afile was loaded successfully.'
-  messages-error: '&2Chunk&aLoader &7>> &f&cThere was an error trying to load the file &7%lang%&c.'
-  enabled: '&2Chunk&aLoader &7>> &f&aChunk load logs enabled.'
-  disabled: '&2Chunk&aLoader &7>> &f&cChunk load logs disabled'
+  load: '&aChunk &7%chunk% &awas loaded correctly.'
+  unload: '&cChunk &7%chunk% &cwas unloaded correctly.'
+  messages: '&7%lang% &afile was loaded successfully.'
+  messages-error: '&cThere was an error trying to load the file &7%lang%&c.'
+  enabled: '&aChunk load logs enabled.'
+  disabled: '&cChunk load logs disabled'
 removechunk:
-  correct: '&2Chunk&aLoader &7>> &f&aChunk &7%chunk_coords% &awas unregistered successfully.'
-  inexist: '&2Chunk&aLoader &7>> &f&cChunk &7%chunk_coords% &cnot registered.'
+  correct: '&aChunk &7%chunk_coords% &awas unregistered successfully.'
+  inexist: '&cChunk &7%chunk_coords% &cnot registered.'
 chunkloader:
-  enabled: '&2Chunk&aLoader &7>> &f&fChunk loading has been activated.'
-  already-enabled: '&2Chunk&aLoader &7>> &f&cChunk loading is already activated.'
-  disabled: '&2Chunk&aLoader &7>> &f&fChunk loading has been disabled.'
-  already-disabled: '&2Chunk&aLoader &7>> &f&cChunk loading is already disabled.'
-  reload: '&2Chunk&aLoader &7>> &f&fConfiguration was reloaded correctly.'
-  teleport: '&2Chunk&aLoader &7>> &f&aYou have teleported to the chunk &7%chunk_coords% - %chunk_world%&a.'
-  teleport-invalid: '&2Chunk&aLoader &7>> &f&cThe entered chunk is invalid, use &7/cl list&c.'
-  region-added: '&2Chunk&aLoader &7>> &a¡All chunks selected have been added!'
-  region-removed: '&2Chunk&aLoader &7>> &a¡All chunks selected have been removed!'
+  enabled: '&fChunk loading has been activated.'
+  already-enabled: '&cChunk loading is already activated.'
+  disabled: '&fChunk loading has been disabled.'
+  already-disabled: '&cChunk loading is already disabled.'
+  reload: '&fConfiguration was reloaded correctly.'
+  teleport: '&aYou have teleported to the chunk &7%chunk_coords% - %chunk_world%&a.'
+  teleport-invalid: '&cThe entered chunk is invalid, use &7/cl list&c.'
+  region-added: 'All chunks selected have been added!'
+  region-removed: 'All chunks selected have been removed!'
   help:
-    - '&2Chunk&aLoader &fplugin by segu23'
+    - '&bChunk&fLoader &fplugin by OGTime'
     - ''
     - ' &8» &6/cl help&f: Displays information about commands.'
     - ' &8» &6/cl on&f: Turn on chunk load.'
@@ -38,4 +38,4 @@ chunkloader:
     - ' &8» &6/addchunk&f: Add the current chunk to the registry.'
     - ' &8» &6/removechunk&f: Delete the current chunk of the registry.'
   list: ' &8» &7%chunk_coords% - %chunk_world%'
-  list-null: '&2Chunk&aLoader &7>> &f&cThere is no registered chunk.'
+  list-null: '&cThere is no registered chunk.'

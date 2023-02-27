@@ -40,3 +40,4 @@ permissions:
       - chunkloader.on
       - chunkloader.off
       - chunkloader.reload
+      - chunkloader.create

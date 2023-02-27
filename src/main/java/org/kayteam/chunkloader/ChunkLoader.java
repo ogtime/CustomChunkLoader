@@ -3,6 +3,7 @@ package org.kayteam.chunkloader;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kayteam.chunkloader.chunk.ChunkManager;
 import org.kayteam.chunkloader.commands.*;
+import org.kayteam.chunkloader.listeners.ChunkLoaderListener;
 import org.kayteam.chunkloader.listeners.ChunkUnloadListener;
 import org.kayteam.chunkloader.listeners.PlayerJoinListener;
 import org.kayteam.chunkloader.util.Metrics;
@@ -20,13 +21,10 @@ public class ChunkLoader extends JavaPlugin {
 
     private static ChunkManager chunkManager;
     public static YML messages;
-    private static YML messages_es;
     private static YML messages_en;
-    private static YML messages_ru;
-    private static YML messages_fr;
     public static YML data;
     public static YML config;
-    public static final String logPrefix = "&2Chunk&aLoader &7>> &f";
+    public static final String logPrefix = "&bChunk&fLoader &7>> &f";
     private static String lang;
 
     @Override
@@ -93,14 +91,8 @@ public class ChunkLoader extends JavaPlugin {
     }
 
     private static void registerFiles() {
-        messages_es = new YML(instance, "messages_es");
-        messages_es.register();
         messages_en = new YML(instance, "messages_en");
         messages_en.register();
-        messages_ru = new YML(instance, "messages_ru");
-        messages_ru.register();
-        messages_fr = new YML(instance, "messages_fr");
-        messages_fr.register();
         config = new YML(instance, "config");
         config.register();
         data = new YML(instance, "data");
@@ -134,6 +126,7 @@ public class ChunkLoader extends JavaPlugin {
     private void registerListeners() {
         getServer().getPluginManager().registerEvents(new ChunkUnloadListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        getServer().getPluginManager().registerEvents(new ChunkLoaderListener(), this);
     }
 
     private void loadAll() {

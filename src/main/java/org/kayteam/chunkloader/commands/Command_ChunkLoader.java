@@ -37,6 +37,11 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
                     if (PermissionChecker.check(player, "chunkloader.off")) {
                         new Command_Off().disableChunkLoad(player);
                     }
+
+                } else if (args[0].equalsIgnoreCase("create")) {
+                    if (PermissionChecker.check(player, "chunkloader.create")) {
+                        new Command_CreateChunkLoader().createChunkLoader(player);
+                    }
                 } else if (args[0].equalsIgnoreCase("tp")) {
                     if (PermissionChecker.check(player, "chunkloader.tp")) {
                         if (args.length > 1) {

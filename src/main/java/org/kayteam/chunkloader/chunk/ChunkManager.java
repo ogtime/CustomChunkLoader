@@ -103,7 +103,6 @@ public class ChunkManager {
     }
 
     public void deleteChunk(Chunk chunk, Player player) {
-        World chunkLocationWorld = chunk.getWorld();
         int chunkLocationX = chunk.getX();
         int chunkLocationZ = chunk.getZ();
         String chunkCoords = "X: " + chunkLocationX + "; Z:" + chunkLocationZ;
@@ -114,9 +113,8 @@ public class ChunkManager {
             ChunkLoader.data.save();
             unloadChunk(chunk);
             ChunkLoader.messages.sendMessage(player, "removechunk.correct", new String[][]{{"%chunk_coords%", chunkCoords}});
-        } else {
-            ChunkLoader.messages.sendMessage(player, "removechunk.inexist", new String[][]{{"%chunk_coords%", chunkCoords}});
         }
+
         loadChunkList();
     }
 

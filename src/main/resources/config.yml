@@ -2,6 +2,7 @@ log-chunk-load: true
 chunk-load: true
 lang: en
 update-checker: true
+block-name: '&bChunk&fLoader'
 menu:
   general-options:
     items:
