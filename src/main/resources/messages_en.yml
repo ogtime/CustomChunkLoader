@@ -3,8 +3,8 @@ command:
   only-player: '&cThis command can only be executed by one player.'
   no-permissions: "&cSorry, you don't have permissions to execute this command."
 addchunk:
-  correct: '&aChunk &7%chunk_coords% &ahas been registered successfully.'
-  exist: '&cChunk &7%chunk_coords% &cis already registered.'
+  correct: '&bChunk&fLoader&a successfully started loading Chunk: &7%chunk_coords%.'
+  exist: '&cAnother &bChunk&fLoader &c already exists in the Chunk: &7%chunk_coords%.'
 logs:
   load: '&aChunk &7%chunk% &awas loaded correctly.'
   unload: '&cChunk &7%chunk% &cwas unloaded correctly.'
@@ -13,7 +13,7 @@ logs:
   enabled: '&aChunk load logs enabled.'
   disabled: '&cChunk load logs disabled'
 removechunk:
-  correct: '&aChunk &7%chunk_coords% &awas unregistered successfully.'
+  correct: '&aSuccessfully removed &bChunk&fLoader&a from Chunk: &7%chunk_coords%.'
   inexist: '&cChunk &7%chunk_coords% &cnot registered.'
 chunkloader:
   enabled: '&fChunk loading has been activated.'
@@ -26,16 +26,16 @@ chunkloader:
   region-added: 'All chunks selected have been added!'
   region-removed: 'All chunks selected have been removed!'
   help:
-    - '&bChunk&fLoader &fplugin by OGTime'
+    - '&bChunk&fLoader &7plugin by OGTime'
     - ''
-    - ' &8» &6/cl help&f: Displays information about commands.'
-    - ' &8» &6/cl on&f: Turn on chunk load.'
-    - ' &8» &6/cl off&f: Turn off chunk load.'
-    - ' &8» &6/cl list&f: Displays a list of registered chunks.'
-    - ' &8» &6/cl reload&f: Reload config.'
-    - ' &8» &6/cl tp <index>&f: Teleport to registered chunk.'
-    - ' &8» &6/cl menu&f: Open the interactive menu to manage chunks.'
-    - ' &8» &6/addchunk&f: Add the current chunk to the registry.'
-    - ' &8» &6/removechunk&f: Delete the current chunk of the registry.'
+    - ' &8» &6/cl help&7: Displays information about commands.'
+    - ' &8» &6/cl on&7: Turn on chunk load.'
+    - ' &8» &6/cl off&7: Turn off chunk load.'
+    - ' &8» &6/cl list&7: Displays a list of registered chunks.'
+    - ' &8» &6/cl reload&7: Reload config.'
+    - ' &8» &6/cl tp <index>&7: Teleport to registered chunk.'
+    - ' &8» &6/cl menu&7: Open the interactive menu to manage chunks.'
+    - ' &8» &6/addchunk&7: Add the current chunk to the registry.'
+    - ' &8» &6/removechunk&7: Delete the current chunk of the registry.'
   list: ' &8» &7%chunk_coords% - %chunk_world%'
   list-null: '&cThere is no registered chunk.'
