@@ -32,8 +32,6 @@ public class Command_CreateChunkLoader {
                 )
         );
 
-        Bukkit.getLogger().info(receiver.toString());
-
         receiver.getInventory().addItem(cl);
     }
 }

@@ -8,10 +8,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.inventory.ItemStack;
 import org.kayteam.chunkloader.ChunkLoader;
 import org.kayteam.chunkloader.chunk.ChunkManager;
 import org.kayteam.chunkloader.util.ChunkUtil;
 import org.kayteam.storageapi.storage.YML;
+
+import java.util.Arrays;
+
+import static org.kayteam.chunkloader.Extensions.ItemStackExtension.createGuiItem;
 
 public class ChunkLoaderListener implements Listener {
     @EventHandler
@@ -64,6 +69,28 @@ public class ChunkLoaderListener implements Listener {
         ChunkLoader.getChunkManager().deleteChunk(event.getPlayer().getLocation().getChunk(), event.getPlayer());
         event.setCancelled(true);
         event.getBlock().getLocation().getBlock().setType(Material.AIR);
+
+        String displayName = ChunkLoader.getInstance().getConfig().getString("block-name");
+        if (displayName == null) {
+            return;
+        }
+
+        displayName = displayName.replaceAll("&", "§");
+
+        ItemStack cl = createGuiItem(
+                Material.BEACON,
+                (short) 0,
+                1,
+                displayName,
+                Arrays.asList(
+                        "",
+                        "§7Place this §bChunkLoader§7 in a chunk to",
+                        "§7have it fully load an entire chunk while no",
+                        "§7players are nearby!"
+                )
+        );
+
+        event.getPlayer().getInventory().addItem(cl);
     }
 }
 
