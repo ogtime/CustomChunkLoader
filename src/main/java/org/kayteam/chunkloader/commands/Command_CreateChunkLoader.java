@@ -14,7 +14,7 @@ public class Command_CreateChunkLoader {
     public void createChunkLoader(Player receiver, String radius) {
         String displayName = ChunkLoader.getInstance().getConfig().getString("block-name");
         if (displayName == null) {
-            return;
+            displayName = Material.BEACON.name();
         }
 
         displayName = displayName.replaceAll("&", "§");

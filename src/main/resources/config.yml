@@ -3,6 +3,7 @@ chunk-load: true
 lang: en
 update-checker: true
 block-name: '&bChunk&fLoader'
+block-description:
 menu:
   general-options:
     items:
