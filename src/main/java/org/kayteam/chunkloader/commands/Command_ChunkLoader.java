@@ -54,7 +54,7 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
 
                             // Check if the radius is valid
                             if (args[2].equals("1x1") || args[2].equals("2x2") || args[2].equals("3x3")) {
-                                new Command_CreateChunkLoader().createChunkLoader(receiver, args[1]);
+                                new Command_CreateChunkLoader().createChunkLoader(receiver, args[2]);
                             }
                         } catch (Exception ignored) {
                         }
