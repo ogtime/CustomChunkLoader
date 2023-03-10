@@ -20,7 +20,7 @@ import static org.kayteam.chunkloader.Extensions.ItemStackExtension.createGuiIte
 
 public class ChunkLoaderListener implements Listener {
     @EventHandler
-    private void onChunkLoaderPlaceEvent(BlockPlaceEvent event) {
+    private void onChunkLoaderPlaceEvent(BlockPlaceEvent event  ) {
         // Check for block type
         if (event.getBlock().getType() != Material.BEACON) {
             return;

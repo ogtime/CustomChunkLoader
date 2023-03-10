@@ -42,6 +42,7 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
                 } else if (args[0].equalsIgnoreCase("give")) {
                     if (PermissionChecker.check(player, "chunkloader.give")) {
                         try {
+                            // Set receiver if one is specified
                             Player receiver = player;
                             if (args.length > 1) {
                                 for (Player p : Bukkit.getOnlinePlayers()) {
@@ -51,7 +52,10 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
                                 }
                             }
 
-                            new Command_CreateChunkLoader().createChunkLoader(receiver);
+                            // Check if the radius is valid
+                            if (args[2].equals("1x1") || args[2].equals("2x2") || args[2].equals("3x3")) {
+                                new Command_CreateChunkLoader().createChunkLoader(receiver, args[1]);
+                            }
                         } catch (Exception ignored) {
                         }
 
@@ -101,6 +105,7 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
                 }
                 return tabs;
             }
+        } else if (args.length == 3) {
             if (args[0].equals("give")) {
                 tabs.add("1x1");
                 tabs.add("2x2");

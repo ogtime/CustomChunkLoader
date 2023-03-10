@@ -11,7 +11,7 @@ import java.util.Arrays;
 import static org.kayteam.chunkloader.Extensions.ItemStackExtension.createGuiItem;
 
 public class Command_CreateChunkLoader {
-    public void createChunkLoader(Player receiver) {
+    public void createChunkLoader(Player receiver, String radius) {
         String displayName = ChunkLoader.getInstance().getConfig().getString("block-name");
         if (displayName == null) {
             return;
@@ -28,7 +28,9 @@ public class Command_CreateChunkLoader {
                         "",
                         "§7Place this §bChunkLoader§7 in a chunk to",
                         "§7have it fully load an entire chunk while no",
-                        "§7players are nearby!"
+                        "§7players are nearby!",
+                        "",
+                        "§b§l*§f §7Radius: §b§l" + radius
                 )
         );
 
