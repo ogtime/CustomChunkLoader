@@ -11,7 +11,7 @@ import java.util.Arrays;
 import static org.kayteam.chunkloader.Extensions.ItemStackExtension.createGuiItem;
 
 public class Command_CreateChunkLoader {
-    public void createChunkLoader(Player player, Player receiver) {
+    public void createChunkLoader(Player receiver) {
         String displayName = ChunkLoader.getInstance().getConfig().getString("block-name");
         if (displayName == null) {
             return;

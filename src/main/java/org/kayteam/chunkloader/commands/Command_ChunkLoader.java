@@ -51,7 +51,7 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
                                 }
                             }
 
-                            new Command_CreateChunkLoader().createChunkLoader(player, receiver);
+                            new Command_CreateChunkLoader().createChunkLoader(receiver);
                         } catch (Exception ignored) {
                         }
 
@@ -91,12 +91,21 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
             tabs.add("off");
             tabs.add("tp");
             tabs.add("reload");
+            tabs.add("give");
+
             return tabs;
         } else if (args.length == 2) {
             if (args[0].equals("tp")) {
                 for (int i = 0; i < ChunkLoader.getChunkManager().getChunkList().size(); i++) {
                     tabs.add(String.valueOf(i));
                 }
+                return tabs;
+            }
+            if (args[0].equals("give")) {
+                tabs.add("1x1");
+                tabs.add("2x2");
+                tabs.add("3x3");
+
                 return tabs;
             }
         }
