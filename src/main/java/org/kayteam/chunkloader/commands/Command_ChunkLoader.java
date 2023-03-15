@@ -56,6 +56,9 @@ public class Command_ChunkLoader implements CommandExecutor, TabCompleter {
                             if (args[2].equals("1x1") || args[2].equals("2x2") || args[2].equals("3x3")) {
                                 new Command_CreateChunkLoader().createChunkLoader(receiver, args[2]);
                             }
+                            else {
+                                ChunkLoader.messages.sendMessage(player, "give.command");
+                            }
                         } catch (Exception ignored) {
                         }
 

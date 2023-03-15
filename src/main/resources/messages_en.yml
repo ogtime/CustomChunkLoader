@@ -5,6 +5,8 @@ command:
 addchunk:
   correct: '&bChunk&fLoader&a successfully started loading Chunk: &7%chunk_coords%.'
   exist: '&cAnother &bChunk&fLoader &c already exists in the Chunk: &7%chunk_coords%.'
+give:
+  command: '&cIncorrect command! Please use /chunkloader give <player> <radius>.'
 logs:
   load: '&aChunk &7%chunk% &awas loaded correctly.'
   unload: '&cChunk &7%chunk% &cwas unloaded correctly.'
