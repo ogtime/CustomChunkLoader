@@ -1,4 +1,4 @@
-name: ChunkLoader
+name: CustomChunkLoader
 main: org.kayteam.chunkloader.ChunkLoader
 version: ${project.version}
 author: OGTime
