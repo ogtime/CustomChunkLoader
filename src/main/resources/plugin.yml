@@ -2,7 +2,6 @@ name: CustomChunkLoader
 main: org.kayteam.chunkloader.ChunkLoader
 version: ${project.version}
 author: OGTime
-website: https://github.com/ogtime
 api-version: 1.13
 softdepend: [ Multiverse-Core, WorldEdit ]
 commands:
